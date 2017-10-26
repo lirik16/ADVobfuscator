@@ -22,43 +22,48 @@
 #define BOOST_DISABLE_ASSERTS
 #endif
 
-#pragma warning(disable: 4503)
+//#pragma warning(disable: 4503)
 
 #define ADVLOG 1
 
 #include <iostream>
-#include "Log.h"
-#include "MetaString.h"
+#include <obfuscator/Log.h>
+#include <obfuscator/MetaString.h>
 
 using namespace std;
-using namespace andrivet::ADVobfuscator;
 
+void Sample() {
+    cout << ("test11") << endl;
+    cout << ("test12") << endl;
+    cout << ("test13") << endl;
+    cout << ("test14") << endl;
+}
 
 // Declare and use at the same time
-void SampleEncryped()
-{
-    cout << OBFUSCATED("Britney Spears") << endl;
-    cout << OBFUSCATED("Britney Spears") << endl;
-    cout << OBFUSCATED("Britney Spears") << endl;
-    cout << OBFUSCATED("Britney Spears") << endl;
+void SampleEncryped() {
+    cout << OBFUSCATED("test21") << endl;
+    cout << OBFUSCATED("test22") << endl;
+    cout << OBFUSCATED("test23") << endl;
+    cout << OBFUSCATED("test24") << endl;
 }
 
 // Declaration and usage are separated
-void SampleEncrypedDiffered()
-{
-    auto miley   = DEF_OBFUSCATED("Miley Cyrus");
-    auto britney = DEF_OBFUSCATED("Britney Spears");
-    auto katy    = DEF_OBFUSCATED("Katy Perry");
+void SampleEncrypedDiffered() {
+    auto t1 = DEF_OBFUSCATED("test31");
+    auto t2 = DEF_OBFUSCATED("test32");
+    auto t3 = DEF_OBFUSCATED("test33");
+    auto t4 = DEF_OBFUSCATED("test34");
 
-    cout << britney.decrypt() << endl;
-    cout << katy.decrypt()    << endl;
-    cout << miley.decrypt()   << endl;
+    cout << t1.decrypt() << endl;
+    cout << t2.decrypt() << endl;
+    cout << t3.decrypt() << endl;
+    cout << t4.decrypt() << endl;
 }
 
 
 // Entry point
-int main(int, const char *[])
-{
+int main(int, const char *[]) {
+    Sample();
     SampleEncryped();
     SampleEncrypedDiffered();
 

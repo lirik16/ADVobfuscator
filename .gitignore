@@ -76,3 +76,6 @@ ipch/
 
 *.o
 Sample
+
+cmake-build-debug/
+CMakeLists.txt
